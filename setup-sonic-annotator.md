@@ -10,19 +10,21 @@ wavファイルをmidiに変換するための環境設定
 ### vamp-plugins
 * sonic-annotatorがもっと便利になるプラグインの規格
 
-### Silvet Note Transcription
-* wav -> midiに変換するためのプラグイン
+### wav -> midi変換プラグイン
 * vamp-pluginsの一種
+* 試してみたもプラグイン
+  * Silvet Note Transcription
+  * QM Vamp Plugins
+  * UA Vamp Plugins
 
 ## 手順
 ### ファイルダウンロード&配置
 #### sonic-annotator
 * https://code.soundsoftware.ac.uk/projects/sonic-annotator/files
 * 解凍してパス通っているとこにバイナリを配置
-
-#### Silvet Note Transcription
-* https://code.soundsoftware.ac.uk/projects/silvet/files
-* 解凍
+* Silvet Note Transcription: https://code.soundsoftware.ac.uk/projects/silvet/files
+* QM Vamp Plugins: https://code.soundsoftware.ac.uk/projects/qm-vamp-plugins/files
+* UA Vamp Plugins: http://grfia.dlsi.ua.es/cm/projects/drims/softwareVAMP.php
 
 ##### Macの場合
 `/Library/Audio/Plug-Ins/Vamp/`にファイルを配置
@@ -34,5 +36,9 @@ wavファイルをmidiに変換するための環境設定
 
 ### 実行
 ```
-sonic-annotator file_to_convert.wav -d vamp:silvet:silvet:notes -w midi
+sonic-annotator [変換するファイル] -d [vamp-pluginの名前] -w midi
 ```
+* vamp-pluginの名前
+  * vamp:silvet:silvet:notes
+  * vamp:qm-vamp-plugins:qm-transcription:transcription
+  * vamp:ua-vamp-plugins:mf0ua:mf0ua
